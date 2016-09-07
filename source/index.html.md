@@ -1,11 +1,9 @@
 ---
-title: API Reference
+title: Smart Fridge
 
 language_tabs:
-  - shell
-  - ruby
-  - python
-  - javascript
+  - json
+  
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -19,38 +17,25 @@ search: true
 
 # Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
-
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
-
-This example API documentation page was created with [Slate](https://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
-
+This api is the thing thing ding.
 # Authentication
 
-> To authorize, use this code:
+> To authorize, send the UserId with every request:
 
-```ruby
-require 'kittn'
+<aside class="notice">
+All parameters are send via JSON with the POST variable 'json'
+</aside>
+Parameter | Default | Description
+--------- | ------- | -----------
+UserId | -- | 
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
 
-```python
-import kittn
 
-api = kittn.authorize('meowmeowmeow')
-```
 
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
+```json
+	{"UserId": "jfujasdfdoiasdfpasdfoip",
+	...
+	}
 ```
 
 > Make sure to replace `meowmeowmeow` with your API key.
@@ -65,125 +50,84 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Contains
 
-## Get All Kittens
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
+```json
+{
+"UserId":"asdfasdf",
+(optional)
+"Sort" : "opened+closed/everything/opened/closed"
+}
 ```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
+>The everything command returns also the items that were in the fridge. now no things
 
 ```json
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "name": "1kg brown sugar",
+    "barcode": "10293838128182891212",
+    "closed": 4,
+    "opened": 1
   },
   {
     "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "name": "Monster beer",
+    "barcode": "091991290913213",
+    "closed": 5,
+    "opened": 10
   }
+  ...
 ]
 ```
 
-This endpoint retrieves all kittens.
+This gets all the items in the fridge, opened and closed.
 
 ### HTTP Request
 
-`GET http://example.com/api/kittens`
+`POST /api/contains`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+Parameter | Default | Possible values | Description	| 
+--------- | ------- | --------------- |  -----------
+(OPTIONAL)Sort | opened+closed | everything/opened/opened+closed/closed | Get the type of items in the fridge.
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
+# Get Jobs
+The jobs are the things that the fridge has to do, from printing a barcode to playing a song(not implemented :P)
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+"UserId":"asdfasdfsadf",
+(optional)
+"Status":"new/all/done",
+"Type": "all/qrCode/text/list"
+}
+ ```
+>The JSON output, an array of (different sorts)
+
+```json
+{
+[{
+"Type":"qrCode",
+"Code": "9120398890",
+"Status":"new/done",
+"JobId":82712
+},
+{
+"Type":"text" ,
+"Text":"This will be printed by the fridge",
+"Status":"new/done",
+"JobId":82733
+},
+{
+"Type": "list",
+"Items":[
+		{"Title":"1kg apples"},
+		{"Title":"Big pack milk"}],
+"Status":"new/done",
+"JobId":82733
 }
 ```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
