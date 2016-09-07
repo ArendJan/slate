@@ -130,4 +130,6 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 "Status":"new/done",
 "JobId":82733
 }
+]
+}
 ```
