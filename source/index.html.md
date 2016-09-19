@@ -3,7 +3,7 @@ title: Smart Fridge
 
 language_tabs:
   - json
-  
+
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -27,7 +27,7 @@ All parameters are send via JSON with the POST variable 'json'
 </aside>
 Parameter | Default | Description
 --------- | ------- | -----------
-UserId | -- | 
+UserId | -- |
 
 
 
@@ -90,7 +90,7 @@ This gets all the items in the fridge, opened and closed.
 
 ### Query Parameters
 
-Parameter | Default | Possible values | Description	| 
+Parameter | Default | Possible values | Description	|
 --------- | ------- | --------------- |  -----------
 (OPTIONAL)Sort | opened+closed | everything/opened/opened+closed/closed | Get the type of items in the fridge.
 
@@ -133,3 +133,16 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 ]
 }
 ```
+
+
+
+### HTTP Request
+
+`POST /api/getJobs`
+
+### Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+(OPTIONAL)Status | new | new/all/done | Get only the jobs of with that status
+(OPTIONAL)Type  | all | all/qrCode/text/list | Get only the jobs of that type
