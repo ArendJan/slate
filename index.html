@@ -128,7 +128,7 @@
 </blockquote>
 
 <aside class="notice">
-All parameters are send via JSON with the POST variable &lsquo;json&rsquo;
+All parameters are send JSON serialized via post.
 </aside>
 
 <table><thead>
@@ -255,6 +255,34 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </span><span class="err">]</span><span class="w">
 </span><span class="err">}</span><span class="w">
 </span></code></pre>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/getJobs</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(OPTIONAL)Status</td>
+<td>new</td>
+<td>new/all/done</td>
+<td>Get only the jobs of with that status</td>
+</tr>
+<tr>
+<td>(OPTIONAL)Type</td>
+<td>all</td>
+<td>all/qrCode/text/list</td>
+<td>Get only the jobs of that type</td>
+</tr>
+</tbody></table>
 
           <h1 id="errors">Errors</h1>
 
