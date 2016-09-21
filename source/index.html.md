@@ -23,7 +23,7 @@ This api is the thing thing ding.
 > To authorize, send the UserId with every request:
 
 <aside class="notice">
-All parameters are send JSON serialized via post.
+All parameters are send in the POST variable JSON.
 </aside>
 Parameter | Default | Description
 --------- | ------- | -----------
