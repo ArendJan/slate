@@ -147,6 +147,54 @@ Parameter | Default | Possible values | Description	|
 (OPTIONAL)Status | new | new/all/done | Get only the jobs of with that status
 (OPTIONAL)Type  | all | all/qrCode/text/list/reboot/halt/etc.... | Get only the jobs of that type
 
+# Mark jobs
+
+
+```json
+"userId": "asdfasdfasdf",
+"JobId":12345,
+(Optional)
+"Status":"done/new"}
+```
+>Or in an array:
+```json
+{"userId": "asdfasdfasdf",
+"Jobs":[
+  {"JobId":12345,
+    (Optional)
+  "Status": "done/new"},
+  {"JobId":12346,
+    (Optional)
+  "Status": "done/new"}
+
+  ]}
+```
+>The output
+```json
+{"JobId":12345,
+"Status":"done/new"}
+```
+>Or in an array:
+```json
+{"Jobs":[{"JobId":12345,
+"Status":"done/new"},
+{"JobId":12346,
+"Status":"done/new"}
+]}
+```
+
+This gets all the items in the fridge, opened and closed.
+
+### HTTP Request
+
+`POST /api/contains`
+
+### Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+(OPTIONAL)Sort | opened+closed | everything/opened/opened+closed/closed | Get the type of items in the fridge.
+
 
 
 #mark Jobs
