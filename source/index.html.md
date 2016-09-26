@@ -238,6 +238,7 @@ Text | - | - | The text that will be printed.
 ##Barcode
 Create a job that will print a new barcode for a new item.
 The Code variable is a String, because of server reasons. Needs to be EAN13.
+
 ```json
 {"UserId": "asdfasdfasdf",
 "Type": "qrCode",
@@ -272,6 +273,7 @@ Type | shutdown | - | easy and fast.
 
 ##Reboot
 Create a job that will restart the Raspberry Pi. This is usefull when there is new software. Sends sudo reboot to the terminal
+
 ```json
 {"UserId": "asdfasdfasdf",
 "Type": "reboot"
@@ -284,8 +286,50 @@ Create a job that will restart the Raspberry Pi. This is usefull when there is n
 
 Parameter | Default | Possible values | Description	|
 --------- | ------- | --------------- |  -----------
-Type | reboot | - | qrCode is not the right name, we'll change it when we have time :P .
+Type | reboot | - | GG EZ
 
+
+##Update
+Create a job that will update the smartfridge software by downloading the new software, installing it(putting it in the right place), and restarting the software.
+
+```json
+{"UserId": "asdfasdfasdf",
+"Type": "update"
+}
+```
+
+>Output the same as text
+
+###Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Type | update | - | Downloads from the master and will delete every changes you made. Settings will stay the same.
+
+
+##List
+Create a job that prints a list with elements.
+
+```json
+{"UserId": "asdfasdfasdf",
+"Type": "list",
+"Items":[
+  {"Title":"Title of item 1"},
+  {"Title":"Title of item 2"},
+  {"Title":"Title of item 3"}
+  ...
+]
+}
+```
+
+>Output the same as text
+
+###Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Type | list | - | Will print the list.
+Items | - | - | The array with the items that must be on the list.
 
 
 
