@@ -147,7 +147,7 @@ Parameter | Default | Possible values | Description	|
 (OPTIONAL)Status | new | new/all/done | Get only the jobs of with that status
 (OPTIONAL)Type  | all | all/qrCode/text/list/reboot/halt/etc.... | Get only the jobs of that type
 
-# Mark jobs
+# Mark Jobs
 
 
 ```json
@@ -190,56 +190,109 @@ Parameter | Default | Possible values | Description	|
 ]}
 ```
 
-This gets all the items in the fridge, opened and closed.
+Mark the jobs done or new.asdf This way the Fridge won't print unlimited barcodes or other things.
+
 
 ### HTTP Request
 
-`POST /api/contains`
+`POST /api/markJob`
 
 ### Query Parameters
 
 Parameter | Default | Possible values | Description	|
 --------- | ------- | --------------- |  -----------
+JobId | - | - | The id of the job. This id is unique and will be given via the getJobs request. Numeric value.
+Status | done | done/new | The new status of the job.
 (OPTIONAL)Sort | opened+closed | everything/opened/opened+closed/closed | Get the type of items in the fridge.
 
 
+#Add Job
 
-#mark Jobs
-Mark the jobs done or new.asdf This way the Fridge won't print unlimited barcodes or other things.
-```json
-{"userId": "asdfasdfasdf",
-"JobId":12345,
-(Optional)
-"Status":"done/new"}```
->Or in an array:
-```json
-{"userId": "asdfasdfasdf",
-"Jobs":[
-  {"JobId":12345,
-    (Optional)
-  "Status": "done/new"},
-  {"JobId":12346,
-    (Optional)
-  "Status": "done/new"}
+This will create a new job.
 
-  ]}
+### HTTP Request
+
+`POST /api/addJob`
+
+##Text
+Create a job that will print a text.
+
+```json
+{"UserId": "asdfasdfasdf",
+"Type": "Text",
+"Text": "The text of your choise."}
 ```
 
->The output
+>Will output:
+
 ```json
-{"JobId":12345,
-"Status":"done/new"}
+{"JobId": 12345}
 ```
->Or in an array:
+
+###Query Parameters
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Type | - | - | The type of the new job. You can add new types. See down.
+Text | - | - | The text that will be printed.
+
+##Barcode
+Create a job that will print a new barcode for a new item.
+The Code variable is a String, because of server reasons. Needs to be EAN13.
 ```json
-{"Jobs":[{"JobId":12345,
-"Status":"done/new"},
-{"JobId":12346,
-"Status":"done/new"}
-]}
+{"UserId": "asdfasdfasdf",
+"Type": "qrCode",
+"Code": "11234567891011"}
 ```
-###Http request
-'POST /api/markJob'
+
+>Output the same as text
+
+###Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Type | qrCode | - | qrCode is not the right name, we'll change it when we have time :P .
+Code | -| - | The barcode you want to print. The Code variable is a String, because of server reasons. Needs to be EAN13.
+
+
+##Shut down
+Create a job that will shut down the Raspberry Pi, by sending sudo halt to the terminal.
+
+```json
+{"UserId": "asdfasdfasdf",
+"Type": "shutdown"}
+```
+
+>Output the same as text
+
+###Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Type | shutdown | - | easy and fast.
+
+##Reboot
+Create a job that will restart the Raspberry Pi. This is usefull when there is new software. Sends sudo reboot to the terminal
+```json
+{"UserId": "asdfasdfasdf",
+"Type": "reboot"
+}
+```
+
+>Output the same as text
+
+###Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Type | reboot | - | qrCode is not the right name, we'll change it when we have time :P .
+
+
+
+
+
+
+
+
 
 
 
