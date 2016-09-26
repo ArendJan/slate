@@ -284,6 +284,69 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </tbody></table>
 
+<h1 id="mark-jobs">Mark jobs</h1>
+<pre class="highlight json"><code><span class="s2">"userId"</span><span class="err">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="err">,</span><span class="w">
+</span><span class="s2">"JobId"</span><span class="err">:</span><span class="mi">12345</span><span class="err">,</span><span class="w">
+</span><span class="err">(Optional)</span><span class="w">
+</span><span class="s2">"Status"</span><span class="err">:</span><span class="s2">"done/new"</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Or in an array:
+&ldquo;`json
+{&quot;userId&rdquo;: &ldquo;asdfasdfasdf&rdquo;,
+&ldquo;Jobs&rdquo;:[
+  {&ldquo;JobId&rdquo;:12345,
+    (Optional)
+  &ldquo;Status&rdquo;: &ldquo;done/new&rdquo;},
+  {&ldquo;JobId&rdquo;:12346,
+    (Optional)
+  &ldquo;Status&rdquo;: &ldquo;done/new&rdquo;}</p>
+</blockquote>
+
+<p>]}
+&ldquo;`</p>
+
+<blockquote>
+<p>The output
+<code class="prettyprint">json
+{&quot;JobId&quot;:12345,
+&quot;Status&quot;:&quot;done/new&quot;}
+</code>
+Or in an array:
+<code class="prettyprint">json
+{&quot;Jobs&quot;:[{&quot;JobId&quot;:12345,
+&quot;Status&quot;:&quot;done/new&quot;},
+{&quot;JobId&quot;:12346,
+&quot;Status&quot;:&quot;done/new&quot;}
+]}
+</code></p>
+</blockquote>
+
+<p>This gets all the items in the fridge, opened and closed.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/contains</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>(OPTIONAL)Sort</td>
+<td>opened+closed</td>
+<td>everything/opened/opened+closed/closed</td>
+<td>Get the type of items in the fridge.</td>
+</tr>
+</tbody></table>
+
 <h1 id="mark-jobs">mark Jobs</h1>
 
 <p>Mark the jobs done or new.asdf This way the Fridge won&rsquo;t print unlimited barcodes or other things.
@@ -295,8 +358,8 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 <blockquote>
 <p>Or in an array:
-&ldquo;`json
-{&quot;userId&rdquo;: &ldquo;asdfasdfasdf&rdquo;,
+&rdquo;`json
+{&ldquo;userId&rdquo;: &ldquo;asdfasdfasdf&rdquo;,
 &ldquo;Jobs&rdquo;:[
   {&ldquo;JobId&rdquo;:12345,
     (Optional)
