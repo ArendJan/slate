@@ -151,12 +151,15 @@ Parameter | Default | Possible values | Description	|
 
 
 ```json
-"userId": "asdfasdfasdf",
+{"userId": "asdfasdfasdf",
 "JobId":12345,
 (Optional)
 "Status":"done/new"}
 ```
+
 >Or in an array:
+
+
 ```json
 {"userId": "asdfasdfasdf",
 "Jobs":[
@@ -169,12 +172,16 @@ Parameter | Default | Possible values | Description	|
 
   ]}
 ```
+
 >The output
+
 ```json
 {"JobId":12345,
 "Status":"done/new"}
 ```
+
 >Or in an array:
+
 ```json
 {"Jobs":[{"JobId":12345,
 "Status":"done/new"},
