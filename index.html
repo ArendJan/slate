@@ -408,12 +408,11 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <h2 id="barcode">Barcode</h2>
 
 <p>Create a job that will print a new barcode for a new item.
-The Code variable is a String, because of server reasons. Needs to be EAN13.
-<code class="prettyprint">json
-{&quot;UserId&quot;: &quot;asdfasdfasdf&quot;,
-&quot;Type&quot;: &quot;qrCode&quot;,
-&quot;Code&quot;: &quot;11234567891011&quot;}
-</code></p>
+The Code variable is a String, because of server reasons. Needs to be EAN13.</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qrCode"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11234567891011"</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <blockquote>
 <p>Output the same as text</p>
@@ -474,12 +473,11 @@ The Code variable is a String, because of server reasons. Needs to be EAN13.
 
 <h2 id="reboot">Reboot</h2>
 
-<p>Create a job that will restart the Raspberry Pi. This is usefull when there is new software. Sends sudo reboot to the terminal
-<code class="prettyprint">json
-{&quot;UserId&quot;: &quot;asdfasdfasdf&quot;,
-&quot;Type&quot;: &quot;reboot&quot;
-}
-</code></p>
+<p>Create a job that will restart the Raspberry Pi. This is usefull when there is new software. Sends sudo reboot to the terminal</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reboot"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <blockquote>
 <p>Output the same as text</p>
@@ -499,7 +497,79 @@ The Code variable is a String, because of server reasons. Needs to be EAN13.
 <td>Type</td>
 <td>reboot</td>
 <td>-</td>
-<td>qrCode is not the right name, we&rsquo;ll change it when we have time :P .</td>
+<td>GG EZ</td>
+</tr>
+</tbody></table>
+
+<h2 id="update">Update</h2>
+
+<p>Create a job that will update the smartfridge software by downloading the new software, installing it(putting it in the right place), and restarting the software.</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Output the same as text</p>
+</blockquote>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>update</td>
+<td>-</td>
+<td>Downloads from the master and will delete every changes you made. Settings will stay the same.</td>
+</tr>
+</tbody></table>
+
+<h2 id="list">List</h2>
+
+<p>Create a job that prints a list with elements.</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"list"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Items"</span><span class="p">:[</span><span class="w">
+  </span><span class="p">{</span><span class="nt">"Title"</span><span class="p">:</span><span class="s2">"Title of item 1"</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nt">"Title"</span><span class="p">:</span><span class="s2">"Title of item 2"</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nt">"Title"</span><span class="p">:</span><span class="s2">"Title of item 3"</span><span class="p">}</span><span class="w">
+  </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Output the same as text</p>
+</blockquote>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>list</td>
+<td>-</td>
+<td>Will print the list.</td>
+</tr>
+<tr>
+<td>Items</td>
+<td>-</td>
+<td>-</td>
+<td>The array with the items that must be on the list.</td>
 </tr>
 </tbody></table>
 
