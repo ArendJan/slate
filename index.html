@@ -284,7 +284,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<h1 id="mark-jobs">Mark jobs</h1>
+<h1 id="mark-jobs">Mark Jobs</h1>
 <pre class="highlight json"><code><span class="p">{</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"JobId"</span><span class="p">:</span><span class="mi">12345</span><span class="p">,</span><span class="w">
 </span><span class="err">(Optional)</span><span class="w">
@@ -323,11 +323,11 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </span><span class="p">]}</span><span class="w">
 </span></code></pre>
 
-<p>This gets all the items in the fridge, opened and closed.</p>
+<p>Mark the jobs done or new.asdf This way the Fridge won&rsquo;t print unlimited barcodes or other things.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST /api/contains</code></p>
+<p><code class="prettyprint">POST /api/markJob</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -340,6 +340,18 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </thead><tbody>
 <tr>
+<td>JobId</td>
+<td>-</td>
+<td>-</td>
+<td>The id of the job. This id is unique and will be given via the getJobs request. Numeric value.</td>
+</tr>
+<tr>
+<td>Status</td>
+<td>done</td>
+<td>done/new</td>
+<td>The new status of the job.</td>
+</tr>
+<tr>
 <td>(OPTIONAL)Sort</td>
 <td>opened+closed</td>
 <td>everything/opened/opened+closed/closed</td>
@@ -347,50 +359,149 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </tr>
 </tbody></table>
 
-<h1 id="mark-jobs">mark Jobs</h1>
+<h1 id="add-job">Add Job</h1>
 
-<p>Mark the jobs done or new.asdf This way the Fridge won&rsquo;t print unlimited barcodes or other things.
-<code class="prettyprint">json
-{&quot;userId&quot;: &quot;asdfasdfasdf&quot;,
-&quot;JobId&quot;:12345,
-(Optional)
-&quot;Status&quot;:&quot;done/new&quot;}</code></p>
+<p>This will create a new job.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/addJob</code></p>
+
+<h2 id="text">Text</h2>
+
+<p>Create a job that will print a text.</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The text of your choise."</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
 <blockquote>
-<p>Or in an array:
-&ldquo;`json
-{&quot;userId&rdquo;: &ldquo;asdfasdfasdf&rdquo;,
-&ldquo;Jobs&rdquo;:[
-  {&ldquo;JobId&rdquo;:12345,
-    (Optional)
-  &ldquo;Status&rdquo;: &ldquo;done/new&rdquo;},
-  {&ldquo;JobId&rdquo;:12346,
-    (Optional)
-  &ldquo;Status&rdquo;: &ldquo;done/new&rdquo;}</p>
+<p>Will output:</p>
 </blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"JobId"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">}</span><span class="w">
+</span></code></pre>
 
-<p>]}
-&ldquo;`</p>
+<h3 id="query-parameters">Query Parameters</h3>
 
-<blockquote>
-<p>The output
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>-</td>
+<td>-</td>
+<td>The type of the new job. You can add new types. See down.</td>
+</tr>
+<tr>
+<td>Text</td>
+<td>-</td>
+<td>-</td>
+<td>The text that will be printed.</td>
+</tr>
+</tbody></table>
+
+<h2 id="barcode">Barcode</h2>
+
+<p>Create a job that will print a new barcode for a new item.
+The Code variable is a String, because of server reasons. Needs to be EAN13.
 <code class="prettyprint">json
-{&quot;JobId&quot;:12345,
-&quot;Status&quot;:&quot;done/new&quot;}
-</code>
-Or in an array:
-<code class="prettyprint">json
-{&quot;Jobs&quot;:[{&quot;JobId&quot;:12345,
-&quot;Status&quot;:&quot;done/new&quot;},
-{&quot;JobId&quot;:12346,
-&quot;Status&quot;:&quot;done/new&quot;}
-]}
+{&quot;UserId&quot;: &quot;asdfasdfasdf&quot;,
+&quot;Type&quot;: &quot;qrCode&quot;,
+&quot;Code&quot;: &quot;11234567891011&quot;}
 </code></p>
 
-<h3 id="http-request">Http request</h3>
-
-<p>&lsquo;POST /api/markJob&rsquo;</p>
+<blockquote>
+<p>Output the same as text</p>
 </blockquote>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>qrCode</td>
+<td>-</td>
+<td>qrCode is not the right name, we&rsquo;ll change it when we have time :P .</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>-</td>
+<td>-</td>
+<td>The barcode you want to print. The Code variable is a String, because of server reasons. Needs to be EAN13.</td>
+</tr>
+</tbody></table>
+
+<h2 id="shut-down">Shut down</h2>
+
+<p>Create a job that will shut down the Raspberry Pi, by sending sudo halt to the terminal.</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shutdown"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Output the same as text</p>
+</blockquote>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>shutdown</td>
+<td>-</td>
+<td>easy and fast.</td>
+</tr>
+</tbody></table>
+
+<h2 id="reboot">Reboot</h2>
+
+<p>Create a job that will restart the Raspberry Pi. This is usefull when there is new software. Sends sudo reboot to the terminal
+<code class="prettyprint">json
+{&quot;UserId&quot;: &quot;asdfasdfasdf&quot;,
+&quot;Type&quot;: &quot;reboot&quot;
+}
+</code></p>
+
+<blockquote>
+<p>Output the same as text</p>
+</blockquote>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Type</td>
+<td>reboot</td>
+<td>-</td>
+<td>qrCode is not the right name, we&rsquo;ll change it when we have time :P .</td>
+</tr>
+</tbody></table>
 
 <p>lel</p>
 
