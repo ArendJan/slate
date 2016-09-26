@@ -149,7 +149,7 @@ Parameter | Default | Possible values | Description	|
 
 
 
-#markJobs
+#mark Jobs
 Mark the jobs done or new. This way the Fridge won't print unlimited barcodes or other things.
 ```json
 {"userId": "asdfasdfasdf",
@@ -168,7 +168,7 @@ Mark the jobs done or new. This way the Fridge won't print unlimited barcodes or
   "Status": "done/new"}
 
   ]}
-  ```
+```
 
 >The output
 ```json
@@ -183,7 +183,8 @@ Mark the jobs done or new. This way the Fridge won't print unlimited barcodes or
 "Status":"done/new"}
 ]}
 ```
-
+###Http request
+'POST /api/markJob'
 
 
 
