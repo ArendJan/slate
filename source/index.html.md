@@ -150,7 +150,7 @@ Parameter | Default | Possible values | Description	|
 
 
 #mark Jobs
-Mark the jobs done or new. This way the Fridge won't print unlimited barcodes or other things.
+Mark the jobs done or new.asdf This way the Fridge won't print unlimited barcodes or other things.
 ```json
 {"userId": "asdfasdfasdf",
 "JobId":12345,
