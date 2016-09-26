@@ -224,7 +224,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </span><span class="nt">"UserId"</span><span class="p">:</span><span class="s2">"asdfasdfsadf"</span><span class="p">,</span><span class="w">
 </span><span class="err">(optional)</span><span class="w">
 </span><span class="nt">"Status"</span><span class="p">:</span><span class="s2">"new/all/done"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all/qrCode/text/list"</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all/qrCode/text/list/restart/halt/"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -279,10 +279,53 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>(OPTIONAL)Type</td>
 <td>all</td>
-<td>all/qrCode/text/list</td>
+<td>all/qrCode/text/list/reboot/halt/etc&hellip;.</td>
 <td>Get only the jobs of that type</td>
 </tr>
 </tbody></table>
+
+<h1 id="markjobs">markJobs</h1>
+
+<p>Mark the jobs done or new. This way the Fridge won&rsquo;t print unlimited barcodes or other things.
+<code class="prettyprint">json
+{&quot;userId&quot;: &quot;asdfasdfasdf&quot;,
+&quot;JobId&quot;:12345,
+(Optional)
+&quot;Status&quot;:&quot;done/new&quot;}</code></p>
+
+<blockquote>
+<p>Or in an array:
+&ldquo;`json
+{&quot;userId&rdquo;: &ldquo;asdfasdfasdf&rdquo;,
+&ldquo;Jobs&rdquo;:[
+  {&ldquo;JobId&rdquo;:12345,
+    (Optional)
+  &ldquo;Status&rdquo;: &ldquo;done/new&rdquo;},
+  {&ldquo;JobId&rdquo;:12346,
+    (Optional)
+  &ldquo;Status&rdquo;: &ldquo;done/new&rdquo;}</p>
+</blockquote>
+
+<p>]}
+  &ldquo;`</p>
+
+<blockquote>
+<p>The output
+<code class="prettyprint">json
+{&quot;JobId&quot;:12345,
+&quot;Status&quot;:&quot;done/new&quot;}
+</code>
+Or in an array:
+<code class="prettyprint">json
+{&quot;Jobs&quot;:[{&quot;JobId&quot;:12345,
+&quot;Status&quot;:&quot;done/new&quot;},
+{&quot;JobId&quot;:12346,
+&quot;Status&quot;:&quot;done/new&quot;}
+]}
+</code></p>
+</blockquote>
+
+<p>lel</p>
 
           <h1 id="errors">Errors</h1>
 
