@@ -103,7 +103,7 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 "UserId":"asdfasdfsadf",
 (optional)
 "Status":"new/all/done",
-"Type": "all/qrCode/text/list"
+"Type": "all/qrCode/text/list/restart/halt/"
 }
  ```
 >The JSON output, an array of (different sorts)
@@ -145,4 +145,69 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 Parameter | Default | Possible values | Description	|
 --------- | ------- | --------------- |  -----------
 (OPTIONAL)Status | new | new/all/done | Get only the jobs of with that status
-(OPTIONAL)Type  | all | all/qrCode/text/list | Get only the jobs of that type
+(OPTIONAL)Type  | all | all/qrCode/text/list/reboot/halt/etc.... | Get only the jobs of that type
+
+
+
+#markJobs
+Mark the jobs done or new. This way the Fridge won't print unlimited barcodes or other things.
+```json
+{"userId": "asdfasdfasdf",
+"JobId":12345,
+(Optional)
+"Status":"done/new"}```
+>Or in an array:
+```json
+{"userId": "asdfasdfasdf",
+"Jobs":[
+  {"JobId":12345,
+    (Optional)
+  "Status": "done/new"},
+  {"JobId":12346,
+    (Optional)
+  "Status": "done/new"}
+
+  ]}
+  ```
+
+>The output
+```json
+{"JobId":12345,
+"Status":"done/new"}
+```
+>Or in an array:
+```json
+{"Jobs":[{"JobId":12345,
+"Status":"done/new"},
+{"JobId":12346,
+"Status":"done/new"}
+]}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+lel
