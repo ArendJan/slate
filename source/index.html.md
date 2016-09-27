@@ -114,13 +114,13 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 "Type":"qrCode",
 "Code": "9120398890",
 "Status":"new/done",
-"JobId":82712
+"JobId":"82712"
 },
 {
 "Type":"text" ,
 "Text":"This will be printed by the fridge",
 "Status":"new/done",
-"JobId":82733
+"JobId":"82733"
 },
 {
 "Type": "list",
@@ -128,7 +128,7 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 		{"Title":"1kg apples"},
 		{"Title":"Big pack milk"}],
 "Status":"new/done",
-"JobId":82733
+"JobId":"82733"
 }
 ]
 }
@@ -151,8 +151,8 @@ Parameter | Default | Possible values | Description	|
 
 
 ```json
-{"userId": "asdfasdfasdf",
-"JobId":12345,
+{"UserId": "asdfasdfasdf",
+"JobId":"12345",
 (Optional)
 "Status":"done/new"}
 ```
@@ -161,12 +161,12 @@ Parameter | Default | Possible values | Description	|
 
 
 ```json
-{"userId": "asdfasdfasdf",
+{"UserId": "asdfasdfasdf",
 "Jobs":[
-  {"JobId":12345,
+  {"JobId":"12345",
     (Optional)
   "Status": "done/new"},
-  {"JobId":12346,
+  {"JobId":"12346",
     (Optional)
   "Status": "done/new"}
 
@@ -176,16 +176,16 @@ Parameter | Default | Possible values | Description	|
 >The output
 
 ```json
-{"JobId":12345,
+{"JobId":"12345",
 "Status":"done/new"}
 ```
 
 >Or in an array:
 
 ```json
-{"Jobs":[{"JobId":12345,
+{"Jobs":[{"JobId":"12345",
 "Status":"done/new"},
-{"JobId":12346,
+{"JobId":"12346",
 "Status":"done/new"}
 ]}
 ```
@@ -201,7 +201,7 @@ Mark the jobs done or new.asdf This way the Fridge won't print unlimited barcode
 
 Parameter | Default | Possible values | Description	|
 --------- | ------- | --------------- |  -----------
-JobId | - | - | The id of the job. This id is unique and will be given via the getJobs request. Numeric value.
+JobId | - | - | The id of the job. This id is unique and will be given via the getJobs request. String because PHP is weird...
 Status | done | done/new | The new status of the job.
 (OPTIONAL)Sort | opened+closed | everything/opened/opened+closed/closed | Get the type of items in the fridge.
 
