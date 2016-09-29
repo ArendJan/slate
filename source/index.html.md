@@ -103,7 +103,7 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 "UserId":"asdfasdfsadf",
 (optional)
 "Status":"new/all/done",
-"Type": "all/qrCode/text/list/restart/halt/"
+"Type": "all/barcode/text/list/restart/halt/"
 }
  ```
 >The JSON output, an array of (different sorts)
@@ -111,7 +111,7 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 ```json
 {
 [{
-"Type":"qrCode",
+"Type":"barcode",
 "Code": "9120398890",
 "Status":"new/done",
 "JobId":"82712"
@@ -145,7 +145,7 @@ The jobs are the things that the fridge has to do, from printing a barcode to pl
 Parameter | Default | Possible values | Description	|
 --------- | ------- | --------------- |  -----------
 (OPTIONAL)Status | new | new/all/done | Get only the jobs of with that status
-(OPTIONAL)Type  | all | all/qrCode/text/list/reboot/halt/etc.... | Get only the jobs of that type
+(OPTIONAL)Type  | all | all/barcode/text/list/reboot/halt/etc.... | Get only the jobs of that type
 
 # Mark Jobs
 
@@ -241,7 +241,7 @@ The Code variable is a String, because of server reasons. Needs to be EAN13.
 
 ```json
 {"UserId": "asdfasdfasdf",
-"Type": "qrCode",
+"Type": "barcode",
 "Code": "11234567891011"}
 ```
 
@@ -251,7 +251,7 @@ The Code variable is a String, because of server reasons. Needs to be EAN13.
 
 Parameter | Default | Possible values | Description	|
 --------- | ------- | --------------- |  -----------
-Type | qrCode | - | qrCode is not the right name, we'll change it when we have time :P .
+Type | barcode | - | print the barcode.
 Code | -| - | The barcode you want to print. The Code variable is a String, because of server reasons. Needs to be EAN13.
 
 
