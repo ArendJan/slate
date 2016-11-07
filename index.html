@@ -176,18 +176,18 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </blockquote>
 <pre class="highlight json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1kg brown sugar"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10293838128182891212"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"closed"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"opened"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1kg brown sugar"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10293838128182891212"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Closed"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Open"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monster beer"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"091991290913213"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"closed"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"opened"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+    </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monster beer"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"091991290913213"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Closed"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"Open"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
   </span><span class="p">}</span><span class="w">
   </span><span class="err">...</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -224,7 +224,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </span><span class="nt">"UserId"</span><span class="p">:</span><span class="s2">"asdfasdfsadf"</span><span class="p">,</span><span class="w">
 </span><span class="err">(optional)</span><span class="w">
 </span><span class="nt">"Status"</span><span class="p">:</span><span class="s2">"new/all/done"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all/qrCode/text/list/restart/halt/"</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"all/barcode/text/list/restart/halt/"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -233,7 +233,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="err">[{</span><span class="w">
-</span><span class="nt">"Type"</span><span class="p">:</span><span class="s2">"qrCode"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="s2">"barcode"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9120398890"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"Status"</span><span class="p">:</span><span class="s2">"new/done"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"JobId"</span><span class="p">:</span><span class="s2">"82712"</span><span class="w">
@@ -279,7 +279,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <tr>
 <td>(OPTIONAL)Type</td>
 <td>all</td>
-<td>all/qrCode/text/list/reboot/halt/etc&hellip;.</td>
+<td>all/barcode/text/list/reboot/halt/etc&hellip;.</td>
 <td>Get only the jobs of that type</td>
 </tr>
 </tbody></table>
@@ -410,7 +410,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 <p>Create a job that will print a new barcode for a new item.
 The Code variable is a String, because of server reasons. Needs to be EAN13.</p>
 <pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"qrCode"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barcode"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"Code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11234567891011"</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -430,9 +430,9 @@ The Code variable is a String, because of server reasons. Needs to be EAN13.</p>
 </thead><tbody>
 <tr>
 <td>Type</td>
-<td>qrCode</td>
+<td>barcode</td>
 <td>-</td>
-<td>qrCode is not the right name, we&rsquo;ll change it when we have time :P .</td>
+<td>print the barcode.</td>
 </tr>
 <tr>
 <td>Code</td>
@@ -573,7 +573,154 @@ The Code variable is a String, because of server reasons. Needs to be EAN13.</p>
 </tr>
 </tbody></table>
 
-<p>lel</p>
+<h1 id="change-item">Change item</h1>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Barcode"</span><span class="p">:</span><span class="s2">"87451247754"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Action"</span><span class="p">:</span><span class="s2">"add/del/open/delClosed/delOpen"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The output</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monster beer"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"091991290913213"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Closed"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Open"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Add or remove an item from the fridge. When sending del to the server, it will first remove the open items and after that it starts with the closed ones.
+If the closed or open value equals 0, it won&rsquo;t change a thing, but the same output will be send.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/changeItem</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Barcode</td>
+<td>-</td>
+<td>-</td>
+<td>The barcode of the item</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>add</td>
+<td>add/del/open/delClosed/delOpen</td>
+<td>What should be done?</td>
+</tr>
+</tbody></table>
+
+<h1 id="change-title">Change title</h1>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Barcode"</span><span class="p">:</span><span class="s2">"87451247754"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"Title"</span><span class="p">:</span><span class="s2">""</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The output</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Monster beer"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"091991290913213"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Closed"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"Open"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>Change the name/title of the item.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/changeTitle</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Barcode</td>
+<td>-</td>
+<td>-</td>
+<td>The barcode of the item</td>
+</tr>
+<tr>
+<td>Title</td>
+<td>-</td>
+<td>-</td>
+<td>The new title of the item</td>
+</tr>
+</tbody></table>
+
+<h1 id="server-check">Server check</h1>
+
+<blockquote>
+<p>The output</p>
+</blockquote>
+<pre class="highlight json"><code><span class="err">y</span><span class="w">
+</span></code></pre>
+
+<p>This is to check if the url provided is of a smartfridge API.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST/GET /api/serverCheck</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p><em>none</em></p>
+
+<h1 id="user-check">User Check</h1>
+<pre class="highlight json"><code><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfasdfasdf"</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>The output</p>
+</blockquote>
+<pre class="highlight json"><code><span class="err">y/n</span><span class="w">
+</span></code></pre>
+
+<p>Used for the app to check if the given userid is correct.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST /api/userIdCheck</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Possible values</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>UserId</td>
+<td>-</td>
+<td>-</td>
+<td>The given userId to check</td>
+</tr>
+</tbody></table>
 
           <h1 id="errors">Errors</h1>
 
