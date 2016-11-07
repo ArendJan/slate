@@ -357,7 +357,7 @@ Items | - | - | The array with the items that must be on the list.
 ```
 
 
-
+jaja
 Add or remove an item from the fridge. When sending del to the server, it will first remove the open items and after that it starts with the closed ones.
 If the closed or open value equals 0, it won't change a thing, but the same output will be send.
 
