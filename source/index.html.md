@@ -357,7 +357,7 @@ Items | - | - | The array with the items that must be on the list.
 ```
 
 
-jaja
+
 Add or remove an item from the fridge. When sending del to the server, it will first remove the open items and after that it starts with the closed ones.
 If the closed or open value equals 0, it won't change a thing, but the same output will be send.
 
@@ -392,8 +392,8 @@ Action | add | add/del/open/delClosed/delOpen | What should be done?
   "Barcode": "091991290913213",
   "Closed": 5,
   "Open": 10
-}```
-
+}
+```
 
 
 Change the name/title of the item.
@@ -409,32 +409,50 @@ Parameter | Default | Possible values | Description	|
 Barcode | - | - | The barcode of the item
 Title | - | - | The new title of the item
 
+# Server check
 
 
 
+>The output
+
+```json
+y
+```
 
 
+This is to check if the url provided is of a smartfridge API.
+
+### HTTP Request
+
+`POST/GET /api/serverCheck`
+
+### Query Parameters
+
+*none*
 
 
+# User Check
 
 
+```json
+{"UserId": "asdfasdfasdf"}
+```
+
+>The output
+
+```json
+y/n
+```
 
 
+Used for the app to check if the given userid is correct.
 
+### HTTP Request
 
+`POST /api/userIdCheck`
 
+### Query Parameters
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-lel
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+UserId | - | - | The given userId to check
