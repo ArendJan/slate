@@ -65,18 +65,18 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 ```json
 [
   {
-    "id": 1,
-    "name": "1kg brown sugar",
-    "barcode": "10293838128182891212",
-    "closed": 4,
-    "opened": 1
+    "Id": 1,
+    "Name": "1kg brown sugar",
+    "Barcode": "10293838128182891212",
+    "Closed": 4,
+    "Open": 1
   },
   {
-    "id": 2,
-    "name": "Monster beer",
-    "barcode": "091991290913213",
-    "closed": 5,
-    "opened": 10
+    "Id": 2,
+    "Name": "Monster beer",
+    "Barcode": "091991290913213",
+    "Closed": 5,
+    "Open": 10
   }
   ...
 ]
@@ -334,6 +334,79 @@ Items | - | - | The array with the items that must be on the list.
 
 
 
+
+# Change item
+
+
+```json
+{"UserId": "asdfasdfasdf",
+"Barcode":"87451247754",
+"Action":"add/del/open/delClosed/delOpen"}
+```
+
+>The output
+
+```json
+{
+  "Id": 2,
+  "Name": "Monster beer",
+  "Barcode": "091991290913213",
+  "Closed": 5,
+  "Open": 10
+}```
+
+
+
+Add or remove an item from the fridge. When sending del to the server, it will first remove the open items and after that it starts with the closed ones.
+If the closed or open value equals 0, it won't change a thing, but the same output will be send.
+
+
+### HTTP Request
+
+`POST /api/changeItem`
+
+### Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Barcode | - | - | The barcode of the item
+Action | add | add/del/open/delClosed/delOpen | What should be done?
+
+
+# Change title
+
+
+```json
+{"UserId": "asdfasdfasdf",
+"Barcode":"87451247754",
+"Title":""}
+```
+
+>The output
+
+```json
+{
+  "Id": 2,
+  "Name": "Monster beer",
+  "Barcode": "091991290913213",
+  "Closed": 5,
+  "Open": 10
+}```
+
+
+
+Change the name/title of the item.
+
+### HTTP Request
+
+`POST /api/changeTitle`
+
+### Query Parameters
+
+Parameter | Default | Possible values | Description	|
+--------- | ------- | --------------- |  -----------
+Barcode | - | - | The barcode of the item
+Title | - | - | The new title of the item
 
 
 
