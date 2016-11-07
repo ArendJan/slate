@@ -353,7 +353,8 @@ Items | - | - | The array with the items that must be on the list.
   "Barcode": "091991290913213",
   "Closed": 5,
   "Open": 10
-}```
+}
+```
 
 
 
