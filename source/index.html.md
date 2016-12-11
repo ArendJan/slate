@@ -6,18 +6,16 @@ language_tabs:
 
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='http://pws.svshizzle.com/'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
-includes:
-  - errors
 
 search: true
 ---
 
 # Introduction
 
-This api is the thing thing ding.
+This api for the Smartfridge Project made by Arend-Jan van Hilten & Vincent Kling. Please go to [our website](http://pws.svshizzle.com). to view it in action and go to [hackster.io](https://www.hackster.io/ajv/smart-fridge-4a50b5) to make it yourself.
 # Authentication
 
 > To authorize, send the UserId with every request:
@@ -27,28 +25,19 @@ All parameters are send in the POST variable JSON.
 </aside>
 Parameter | Default | Description
 --------- | ------- | -----------
-UserId | -- |
+UserId | -- | Your own userId
 
 
 
 
 ```json
-	{"UserId": "jfujasdfdoiasdfpasdfoip",
+	{"UserId": "oesereideah",
 	...
 	}
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `oesereideah` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
 
 # Contains
 
