@@ -110,7 +110,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><a href='http://pws.svshizzle.com/'>Sign Up for a Developer Key</a></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -119,7 +119,7 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>This api is the thing thing ding.</p>
+<p>This api for the Smartfridge Project made by Arend-Jan van Hilten &amp; Vincent Kling. Please go to <a href="http://pws.svshizzle.com">our website</a>. to view it in action and go to <a href="https://www.hackster.io/ajv/smart-fridge-4a50b5">hackster.io</a> to make it yourself.</p>
 
 <h1 id="authentication">Authentication</h1>
 
@@ -128,7 +128,7 @@
 </blockquote>
 
 <aside class="notice">
-All parameters are send in the POST variable JSON.
+All parameters are send in the POST variable JSON. They are sent in the JSON format.
 </aside>
 
 <table><thead>
@@ -141,27 +141,17 @@ All parameters are send in the POST variable JSON.
 <tr>
 <td>UserId</td>
 <td>&ndash;</td>
-<td></td>
+<td>Your own userId</td>
 </tr>
 </tbody></table>
-<pre class="highlight json"><code><span class="w">    </span><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jfujasdfdoiasdfpasdfoip"</span><span class="p">,</span><span class="w">
+<pre class="highlight json"><code><span class="w">    </span><span class="p">{</span><span class="nt">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"oesereideah"</span><span class="p">,</span><span class="w">
     </span><span class="err">...</span><span class="w">
     </span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">meowmeowmeow</code> with your API key.</p>
+<p>Make sure to replace <code class="prettyprint">oesereideah</code> with your API key.</p>
 </blockquote>
-
-<p>Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our <a href="http://example.com/developers">developer portal</a>.</p>
-
-<p>Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
-
-<p><code class="prettyprint">Authorization: meowmeowmeow</code></p>
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
 
 <h1 id="contains">Contains</h1>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
@@ -719,64 +709,6 @@ If the closed or open value equals 0, it won&rsquo;t change a thing, but the sam
 <td>-</td>
 <td>-</td>
 <td>The given userId to check</td>
-</tr>
-</tbody></table>
-
-          <h1 id="errors">Errors</h1>
-
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
-
-<p>The Kittn API uses the following error codes:</p>
-
-<table><thead>
-<tr>
-<th>Error Code</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
-</tr>
-<tr>
-<td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
-</tr>
-<tr>
-<td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
-</tr>
-<tr>
-<td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
-</tr>
-<tr>
-<td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
 </tr>
 </tbody></table>
 
