@@ -21,7 +21,7 @@ This api for the Smartfridge Project made by Arend-Jan van Hilten & Vincent Klin
 > To authorize, send the UserId with every request:
 
 <aside class="notice">
-All parameters are send in the POST variable JSON.
+All parameters are send in the POST variable JSON. They are sent in the JSON format.
 </aside>
 Parameter | Default | Description
 --------- | ------- | -----------
